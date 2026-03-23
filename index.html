@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeroVerse Cinema | Marvel & DC Movie Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-highlight">HeroVerse</span> Cinema
+    </div>
+    <nav class="nav-filters">
+      <button class="filter-btn active" data-universe="all">All</button>
+      <button class="filter-btn" data-universe="marvel">Marvel</button>
+      <button class="filter-btn" data-universe="dc">DC</button>
+    </nav>
+    <div class="search-wrapper">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search by title, character, or year..."
+        autocomplete="off"
+      />
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="sidebar">
+      <h2>Featured Timeline</h2>
+      <ol id="timelineList" class="timeline-list"></ol>
+    </section>
+
+    <section class="content">
+      <div id="movieGrid" class="movie-grid">
+        <!-- Movie cards injected by JavaScript -->
+      </div>
+      <p id="emptyState" class="empty-state hidden">
+        No movies match your filters. Try a different universe or search term.
+      </p>
+    </section>
+  </main>
+
+  <template id="movieCardTemplate">
+    <article class="movie-card">
+      <div class="poster-wrapper">
+        <img class="poster" alt="" loading="lazy" />
+        <span class="badge universe-badge"></span>
+        <span class="badge year-badge"></span>
+      </div>
+      <div class="movie-body">
+        <h3 class="movie-title"></h3>
+        <p class="movie-meta"></p>
+        <p class="movie-description"></p>
+        <div class="tag-row"></div>
+      </div>
+    </article>
+  </template>
+
+  <footer class="site-footer">
+    <p>HeroVerse Cinema · Marvel and DC movie explorer · Built for Final Project Studio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
